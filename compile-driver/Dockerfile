@@ -14,6 +14,8 @@ RUN rmmod nvidia_modeset || true
 RUN rmmod nvidia || true
 
 # Install NVIDIA drivers.
+# - ignore compiler check
+# - silent installation without user interaction
 RUN sh cuda_11.0.2_450.51.05_linux.run --override --kernel-source-path=/usr/src/kernels/5.7.8-200.fc32.x86_64/ --silent --driver --samples --toolkit
 
 # Test logfile for errors.
