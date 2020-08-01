@@ -8,7 +8,7 @@ RUN wget https://kojipkgs.fedoraproject.org/repos-dist/coreos-pool/latest/x86_64
 RUN yum -y localinstall kernel-devel-5.7.8-200.fc32.x86_64.rpm
 RUN wget http://developer.download.nvidia.com/compute/cuda/11.0.2/local_installers/cuda_11.0.2_450.51.05_linux.run
 
-# Unload kernel modules if previously loaded.
+# Unload kernel modules if previously loaded. Ignore errors if modules aren't loaded yet.
 RUN rmmod nvidia_drm || true
 RUN rmmod nvidia_modeset || true
 RUN rmmod nvidia || true
