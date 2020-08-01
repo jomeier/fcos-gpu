@@ -1,4 +1,5 @@
 FROM fedora:29
+# Use an older Fedora base image because for CUDA we must use an older GCC version to being able to compile the examples !
 
 RUN dnf -y update
 RUN dnf -y install gcc make automake gcc-c++
